@@ -1,0 +1,20 @@
+package edu.elon.math;
+
+public interface CalculatorModelInterface {
+	
+	public void doMultiply();
+	
+	public void doDivide();
+	
+	public void doAdd();
+	
+	public void doSubtract();
+	
+	public double getCurrentNumber();
+	
+	public void registerObserver(Observer o);
+	
+	public void removeObserver(Observer o);
+	
+	public void notifyObservers();
+}

@@ -1,0 +1,29 @@
+package edu.elon.math;
+
+public class CalculatorController implements CalculatorControllerInterface {
+
+	public CalculatorController() {
+		CalculatorModelInterface model = new CalculatorModel();
+		CalculatorGUI view = new CalculatorGUI(this, model);
+	}
+	
+	@Override
+	public void doExpression() {
+		
+	}
+
+	@Override
+	public void updateNumber(String num) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateOperation(String operation) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+}

@@ -1,0 +1,60 @@
+package edu.elon.math;
+
+import java.util.ArrayList;
+
+public class CalculatorModel implements CalculatorModelInterface { 
+	
+	public ArrayList<Observer> observers = new ArrayList<Observer>();
+	public double previousNumber;
+	public double currentNumber;
+	
+	public CalculatorModel() { }
+	
+	@Override
+	public void doMultiply() {
+		setCurrentNumber(previousNumber * currentNumber);
+	}
+
+	@Override
+	public void doDivide() {
+		setCurrentNumber(previousNumber / currentNumber);
+	}
+
+	@Override
+	public void doAdd() {
+		setCurrentNumber(previousNumber + currentNumber);
+	}
+
+	@Override
+	public void doSubtract() {
+		setCurrentNumber(previousNumber - currentNumber);
+	}
+
+	@Override
+	public double getCurrentNumber() {
+		return currentNumber;
+	}
+	
+	@Override
+	public void setCurrentNumber(double num) {
+		currentNumber = num;
+		notifyObservers();
+	}
+
+	@Override
+	public void registerObserver(Observer o) {
+	
+	}
+
+	@Override
+	public void removeObserver(Observer o) {
+	
+	}
+
+	@Override
+	public void notifyObservers() {
+		for(int i = 0; i < observers.size(); i++) {
+			observers.get(i).update(currentNumber);
+		}
+	}
+}

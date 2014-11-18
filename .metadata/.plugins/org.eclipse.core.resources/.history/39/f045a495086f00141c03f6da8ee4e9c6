@@ -1,0 +1,16 @@
+package edu.elon.math;
+
+public interface CalculatorModelInterface {
+	
+	public void doExpression();
+	
+	public void setCurrentNumber(String num);
+	
+	public double getCurrentNumber();
+	
+	public void registerObserver(Observer o);
+	
+	public void removeObserver(Observer o);
+	
+	public void notifyObservers();
+}
